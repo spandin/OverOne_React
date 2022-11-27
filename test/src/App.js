@@ -1,22 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+
+// 1. В компоненте App (в файле App.js) создайте меня (шапку сайта). Можете скопировать эту вёрстку из проекта, 
+// который создался после модуля CSS, или же создать меню заново, в котором будет присутствовать несколько ссылок.
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app-header">
+        <nav>
+          <span className="app-logo">Logo</span>
+          <ul className="app-menu">
+            <a className="app-link" href="https://reactjs.org"> Learn React </a>
+            <a className="app-link" href="https://reactjs.org"> Learn React </a>
+            <a className="app-link" href="https://reactjs.org"> Learn React </a>
+            <a className="app-link" href="https://reactjs.org"> Learn React </a>
+          </ul >
+        </nav>
       </header>
     </div>
   );
