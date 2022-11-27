@@ -1,11 +1,7 @@
 import './App.css';
 
-// 1. В компоненте App (в файле App.js) создайте меня (шапку сайта). Можете скопировать эту вёрстку из проекта, 
-// который создался после модуля CSS, или же создать меню заново, в котором будет присутствовать несколько ссылок.
-
-function App() {
+function Header() {
   return (
-    <div className="app">
       <header className="app-header">
         <nav>
           <span className="app-logo">Logo</span>
@@ -17,8 +13,7 @@ function App() {
           </ul >
         </nav>
       </header>
-    </div>
   );
 }
 
-export default App;
+export default Header;
