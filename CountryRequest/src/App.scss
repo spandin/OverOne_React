@@ -1,0 +1,36 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 0 auto;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+  color: white;
+  input {
+    background-color: rgb(14, 14, 14);
+    height: 50px;
+    width: 250px;
+    color: white;
+    border-radius: 10px;
+    border: 0px white;
+    padding: 0px 10px;
+  }
+}
+
+.Card {
+  border: 2px white dashed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 0px 10px 0px;
+  img {
+    width: 250px;
+    height: 150px;
+  }
+}
