@@ -1,0 +1,52 @@
+.Counter {
+    font-size: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .Count span {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+  
+  input {
+    color: white;
+    background-color: rgb(17, 17, 17);
+    border-radius: 10px;
+    transition: all 0.2s ease-in;
+  }
+  
+  input:hover {
+    color: white;
+    background-color: rgb(17, 17, 17);
+    background-color: rgb(51, 51, 51);
+  }
+  
+  .Buttons input {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .Buttons input:hover {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .input-count {
+    border: 0px;
+    height: 40px;
+    padding: 0px 10px;
+  }
+  
+  .input-count:hover {
+    border: 0px;
+    height: 45px;
+    padding: 0px 10px;
+  }
