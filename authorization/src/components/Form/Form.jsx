@@ -1,4 +1,4 @@
-import './style.css'
+import style from './style.module.css'
 import React from 'react'
 
 export default class Form extends React.Component {
@@ -20,7 +20,7 @@ export default class Form extends React.Component {
     render() {
         const {login, password} = this.state
         return (
-            <form>
+            <form className={style.authform}>
                 <p>Login: {login} Password: {password}</p>
                 <input type="text" name="login" onChange={this.onValueChange} />
                 <input type="password" name="password" onChange={this.onValueChange} />
