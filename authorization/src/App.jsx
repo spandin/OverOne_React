@@ -1,9 +1,9 @@
-import style from './App.module.css';
+import './App.scss';
 import Form from './components/Form/Form'
 
 function App() {
   return (
-    <div className={style.App}>
+    <div className='App'>
       <Form/>
     </div>
   );
