@@ -1,24 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      name: '',
-      country: {
-        name: '',
-        capital: '',
-        flag: ''
-      }
-    }
+export default function App() {
+
+  let [state, setState] = useState({getName: ''})
+  
+  function getName(e) {
+      setState({
+        [e.target.name]: e.target.value,
+      })
   }
 
-  getCountryName = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-    fetch(`https://restcountries.com/v3.1/name/${this.state.name}`)
+  console.log(`state`, state);
+
+useEffect(() => {
+    fetch(`https://restcountries.com/v3.1/name/${state.getName}`)
     .then(res => {
       if(!res.ok) {
         throw Error('Ошибка фетча')
@@ -26,29 +22,26 @@ export default class App extends React.Component {
       return res.json()
     })
     .then((data) => {
-      this.setState({
-        country: {
+      setState({
           name: data[0].name.common,
           capital: data[0].capital[0],
           flag: data[0].flags.png
-        }
       })
     })
     .catch(e => e)
-  }
+}, [state.getName])
 
-  render() {
-    const country = this.state.country.flag ? 
-    <View flag={this.state.country.flag} 
-          name={this.state.country.name} 
-          capital={this.state.country.capital}/> : null
-    return (
-      <div className='App'>
-        <input type="text" name="name" onChange={this.getCountryName} placeholder='Enter country name'/>
-        {country}
-      </div>
-    )
-  }
+    const country = state.flag ? 
+    <View flag={state.flag} 
+          name={state.name} 
+          capital={state.capital}/> : null
+
+  return(
+    <div className='App'>
+      <input type="text" name="getName" onChange={getName} placeholder='Enter country name'/>
+      {country}
+    </div>
+  )
 }
 
 const View = ({flag, name, capital}) => {
@@ -60,15 +53,3 @@ const View = ({flag, name, capital}) => {
     </div>
   ) 
 }
-
-// render() {
-//   const comments = this.state.comment ? <View comment={this.state.comment}/> : null
-//   return comments
-// }
-// }
-
-// const View = ({comment}) => {
-// return (
-//   <span>{comment}</span>
-// )
-// }
